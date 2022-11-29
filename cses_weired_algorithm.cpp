@@ -5,14 +5,14 @@ signed main()
 {
    	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
- 	string s; cin>>s;
- 	int cnt=1, ans=1;
- 	char cur=s[0];
- 	for(int i=1; i<s.size(); i++){
- 		if(s[i]==cur) cnt++;
- 		else cnt=1, cur=s[i];
- 		ans=max(ans, cnt);
- 	}
- 	cout<<ans;
+ 	int n; cin>>n;
+    while(n!=1){
+        cout<<n<<" ";
+        if(n%2){
+            n=n*3+1;
+        }
+        else n=n/2;
+    }
+    cout<<1;
     return 0;
 }
