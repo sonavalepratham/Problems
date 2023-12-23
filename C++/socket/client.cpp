@@ -58,7 +58,7 @@ int main()
     bool isExit = false;
     int bufsize = 1024;
     char buffer[bufsize];
-    char* ip = "127.0.0.1";
+    char* ip = "67.127.0.0";
 
     struct sockaddr_in server_addr;
 
