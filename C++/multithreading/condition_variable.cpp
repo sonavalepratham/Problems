@@ -38,7 +38,7 @@ void addMoney(int Rs){
 
 void withdrawMoney(int Rs){
 	std::unique_lock<mutex> lock(m);
-	cv.wait(lock,[]{return balance!=0;});
+	cv.wait(lock,[]{return balance!=0;}); // wait until lock get's free, similar to lock. wait_for/wait_until
 	if(balance<Rs){
 		cout<<"less than requested money\n";
 		return;
