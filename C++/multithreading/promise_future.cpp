@@ -25,7 +25,9 @@ int main()
  	
  	cout<<"waiting for result\n";
  	cout<<fut.get()<<"\n";
- 	cout<<"Completed!!";
+	cout<<"first value occured\n";
+	cout<<fut.get()<<"\n"; // error will occur here, use shared_future in case of multiple retrivel of value
+	cout<<"Completed!!";
  	t1.join();
     return 0;
 }
