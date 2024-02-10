@@ -48,9 +48,25 @@ void findOdd(ull start, ull end){
 	}	
 }
 
+void findOddEvenWithoutThread()
+{
+	ull start=0, end = 1900000000;
+	auto startTime = chrono::high_resolution_clock::now();
+	
+	findEven(start, end);
+	findOdd(start, end);
+	
+	auto stopTime=chrono::high_resolution_clock::now();
+	auto duration = chrono::duration_cast<chrono::microseconds>(stopTime-startTime);
+	cout<<"OddSum"<<OddSum<<"\n";
+	cout<<"EvenSum"<<EvenSum<<"\n";
+
+	cout<<"Execution Time: "<<duration.count()/1000000<<"\n";
+}
+
 void findOddEven(){
 
-ull start=0, end = 19000000000;
+ull start=0, end = 1900000000;
 
 auto startTime = chrono::high_resolution_clock::now();
 
@@ -58,7 +74,6 @@ std::thread t1(findEven, start, end), t2(findOdd, start, end); // created two th
 
 t1.join(); // wait until t1 is completed
 t2.join(); // wait until t2 is completed
-
 
 //findOdd(start, end);
 //findEven(start, end);
@@ -70,7 +85,7 @@ auto duration = chrono::duration_cast<chrono::microseconds>(stopTime-startTime);
 cout<<"OddSum"<<OddSum<<"\n";
 cout<<"EvenSum"<<EvenSum<<"\n";
 
-cout<<"Execution Time: "<<duration.count()/1000000;
+cout<<"Execution Time: "<<duration.count()/1000000<<"\n";
 }
 
 void printNums(){
@@ -127,11 +142,12 @@ t.join();
 
 int main(){
 
-// findOddEven(); // threads created by function pointer.
+//	findOddEven(); // threads created by function pointer.
+findOddEvenWithoutThread();
 //printNums();
 //FunctorThreadCreation();
 //NonStaticMemberFunction();
-StaticMemberFunction();
+//StaticMemberFunction();
 return 0;
 
 }
