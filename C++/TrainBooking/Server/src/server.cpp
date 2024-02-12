@@ -47,6 +47,7 @@ void Server::acceptClients() {
         {
             std::lock_guard<std::mutex> lock(mutex);
             clientThreads.emplace_back(&ClientHandler::handle, ClientHandler(clientSocketDescriptor));
+            std::cout<<clientThreads.size()<<"\n";
         }
         cv.notify_one();
     }
