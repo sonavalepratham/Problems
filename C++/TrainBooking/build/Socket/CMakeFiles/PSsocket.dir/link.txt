@@ -1,0 +1,2 @@
+/usr/bin/ar qc libPSsocket.a CMakeFiles/PSsocket.dir/src/socket.cpp.o
+/usr/bin/ranlib libPSsocket.a

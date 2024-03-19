@@ -7,4 +7,4 @@ add_executable(TrainBookingClient
 main.cpp
 src/client.cpp
 )
-target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
+include_directories(${CMAKE_SOURCE_DIR}/Client)

@@ -9,4 +9,4 @@ add_executable(${PROJECT_NAME}
     src/server.cpp 
     src/ClientHandler.cpp
     )
-target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
+include_directories(${CMAKE_SOURCE_DIR}/Client)

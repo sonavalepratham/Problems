@@ -1,0 +1,11 @@
+/home/prathmesh/Learn/Problems/C++/TrainBooking/build/CMakeFiles/edit_cache.dir
+/home/prathmesh/Learn/Problems/C++/TrainBooking/build/CMakeFiles/rebuild_cache.dir
+/home/prathmesh/Learn/Problems/C++/TrainBooking/build/Client/CMakeFiles/TrainBookingClient.dir
+/home/prathmesh/Learn/Problems/C++/TrainBooking/build/Client/CMakeFiles/edit_cache.dir
+/home/prathmesh/Learn/Problems/C++/TrainBooking/build/Client/CMakeFiles/rebuild_cache.dir
+/home/prathmesh/Learn/Problems/C++/TrainBooking/build/Server/CMakeFiles/TrainBookingServer.dir
+/home/prathmesh/Learn/Problems/C++/TrainBooking/build/Server/CMakeFiles/edit_cache.dir
+/home/prathmesh/Learn/Problems/C++/TrainBooking/build/Server/CMakeFiles/rebuild_cache.dir
+/home/prathmesh/Learn/Problems/C++/TrainBooking/build/Socket/CMakeFiles/PSsocket.dir
+/home/prathmesh/Learn/Problems/C++/TrainBooking/build/Socket/CMakeFiles/edit_cache.dir
+/home/prathmesh/Learn/Problems/C++/TrainBooking/build/Socket/CMakeFiles/rebuild_cache.dir

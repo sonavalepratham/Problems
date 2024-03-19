@@ -24,6 +24,6 @@ void ClientHandler::handle() {
     } else {
         std::cerr << "Error receiving data from client." << std::endl;
     }
-
     close(clientSocket);
+
 }
