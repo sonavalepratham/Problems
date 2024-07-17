@@ -1,6 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// it will not share ownership of object.
+// clean up after going out of scope.
+// better for scope based pointers.
+
 class A{
 	public:
 		void printData(){
@@ -13,12 +17,13 @@ class A{
 
 template<typename T>
 class unique_ptr1{
-T* m_ptr;
+private:
+	T* m_ptr;
 public:
 
-// explicit don't allow conversion from single parameter.
-// eg. unique_ptr_obj == some_address; this will throw error as we created explicit constructor, else will construct object from some_addr and does comparison.
-explicit unique_ptr1(T* ptr) : m_ptr(ptr){
+	// explicit don't allow conversion from single parameter.
+	// eg. unique_ptr_obj == some_address; this will throw error as we created explicit constructor, else will construct object from some_addr and does comparison.
+	explicit unique_ptr1(T* ptr) : m_ptr(ptr){
 
 }
 
@@ -26,7 +31,7 @@ explicit unique_ptr1(T* ptr) : m_ptr(ptr){
 unique_ptr1(const unique_ptr1&) = delete;
 unique_ptr1& operator=(const unique_ptr1&) = delete;
 
-T* operator ->(){
+	T* operator ->(){
 		return this->m_ptr;
 	}
 
