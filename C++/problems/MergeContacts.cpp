@@ -50,7 +50,7 @@ int main()
     c1.bdays = "05-06-2000";
     c1.phones.push_back("12345678");
     c1.phones.push_back("");
-    c1.phones.push_back("(022)2456-7890");
+    c1.phones.push_back("(022)-2456-7890");
     c1.updated = 5;
     contacts.push_back(c1);
     
@@ -73,7 +73,7 @@ int main()
         string this_parent;
         for(int j=0; j<contacts[i].phones.size(); j++){
             if(contacts[i].phones[j]!=""){
-                if(parent.find(contacts[i].phones[j])==parent.end()){
+                if(parent.find(contacts[i].phones[j])==parent.end() && this_parent.empty()){
                     make_set(parent, contacts[i].phones[j]);
                     this_parent = contacts[i].phones[j];
                 }
@@ -112,13 +112,22 @@ int main()
             resultMap[parent_root]->updated = contacts[i].updated;
         
         addPhonesIfNotExist(contacts[i], resultMap[parent_root]);
+        std::sort(resultMap[parent_root]->phones.begin(), resultMap[parent_root]->phones.end());
     }
+    
+    vector<contact> res;
     
     for(auto& it : resultMap){
-        cout<<it.second->nm<<"\n"<<it.second->bdays<<"\n";
-        for(auto& i : it.second->phones) cout<<i<<" ";
-        cout<<"\n"<<it.second->updated<<"\n";
+        res.push_back(*it.second);
     }
     
+    std::sort(res.begin(), res.end(), [](const contact& a, const contact& b){return a.nm<b.nm; });
+    
+    for(auto& it : res){
+    
+    cout<<it.nm<<"\n"<< (it.bdays == "" ? "empty" : it.bdays)<<"\n";
+    for(auto& i : it.phones) cout<< (i=="" ? "empty" : i)<<" ";
+    cout<<"\n"<<it.updated<<"\n";
+    }
     return 0;
 }
